@@ -16,11 +16,11 @@ sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #Setup Sources
-sudo apt install software-properties-common
-sudo add-apt-repository universe
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y universe
 
 #add the ROS 2 GPG key with apt.
-sudo apt update && sudo apt install curl
+sudo apt update && sudo apt install -y curl
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 #add the repository to your sources list.
@@ -28,11 +28,11 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 
 #Install ROS 2 packages
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt install -y ros-$CHOOSE_ROS_DISTRO-$INSTALL_PACKAGE 
 sudo apt install -y python3-argcomplete
 sudo apt install -y python3-colcon-common-extensions
-sudo apt install -y python-rosdep python3-vcstool
+sudo apt install -y python3-rosdep python3-vcstool
 
 
 echo "source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash" >> ~/.bashrc
