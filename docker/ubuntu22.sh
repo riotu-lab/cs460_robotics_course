@@ -16,6 +16,7 @@ WORKSPACE_DIR=~/${CONTAINER_NAME}_shared_volume
 CMD=""
 DOCKER_OPTS=""
 
+
 # Get the current version of docker-ce
 # Strip leading stuff before the version number so it can be compared
 DOCKER_VER=$(dpkg-query -f='${Version}' --show docker-ce | sed 's/[0-9]://')
