@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+RED="41"
+WHITE="97"
+BLUE="34"
+BOLDBLUE="\e[1;${BLUE}m"
+BOLDRED="\e[1;${RED}m"
+UNDERLINEWHITE="\e[4;${WHITE}m"
+ENDCOLOR="\e[0m"
+
 #Install sudo 
-# su -
 apt-get update
 apt install sudo -y
 
@@ -44,30 +51,29 @@ sudo apt install -y python3-argcomplete
 sudo apt install -y python3-colcon-common-extensions
 sudo apt install -y python3-rosdep python3-vcstool
 sudo apt install -y bash-completion command-not-found
-sudo apt install -y ros-humble-gazebo*
+sudo apt install -y ros-humble-gazebo* 
 
-export "source /etc/bash_completion" << ~/.bashrc
-source /opt/ros/humble/setup.bash
+export "source /opt/ros/humble/setup.bash" >>  ~/.bashrc
+export "source /etc/bash_completion" >> ~/.bashrc
 
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash" >> ~/.bashrc
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "Success installing ROS2 $CHOOSE_ROS_DISTRO"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "Have a good time with ROS2 and don't forget to drop a star on my github for this repo  :')"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "Don't forget to source to workspace before you start"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
-echo "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash >> ~/.bashrc"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "Success installing ${BOLDRED}ROS2${ENDCOLOR} $CHOOSE_ROS_DISTRO"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "Have a good time with ${BOLDRED}ROS2${ENDCOLOR} and don't forget to drop a ${UNDERLINEWHITE}star${ENDCOLOR} on my github for this repo ${BOLDWHITE}:)${ENDCOLOR}"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "${BOLDRED}DON'T FORGET${ENDCOLOR} to source to workspace before you start"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "-----------------------------------------------------------"
 
 
