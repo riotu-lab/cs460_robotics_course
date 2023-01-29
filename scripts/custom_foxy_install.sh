@@ -13,7 +13,7 @@ apt-get update
 apt install sudo -y
 
 #Installation starts here
-CHOOSE_ROS_DISTRO=humble # or humble, etc...
+ROS_DISTRO=foxy # or foxy, galactic, humble, etc...
 INSTALL_PACKAGE=desktop # or ros-base
 
 #Set locale
@@ -46,24 +46,24 @@ sudo apt install code -y
 #Install ROS 2 packages
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y ros-$CHOOSE_ROS_DISTRO-$INSTALL_PACKAGE 
+sudo apt install -y ros-$ROS_DISTRO-$INSTALL_PACKAGE 
 sudo apt install -y python3-argcomplete
 sudo apt install -y python3-colcon-common-extensions
 sudo apt install -y python3-rosdep python3-vcstool
 sudo apt install -y bash-completion command-not-found
-sudo apt install -y ros-humble-gazebo* 
+sudo apt install -y ros-$ROS_DISTRO-gazebo* 
 
-export "source /opt/ros/humble/setup.bash" >>  ~/.bashrc
+export "source /opt/ros/$ROS_DISTRO/setup.bash" >>  ~/.bashrc
 export "source /etc/bash_completion" >> ~/.bashrc
 
 echo -e "-----------------------------------------------------------"
 echo -e "-----------------------------------------------------------"
 echo -e "-----------------------------------------------------------"
-echo -e "source /opt/ros/$CHOOSE_ROS_DISTRO/setup.bash >> ~/.bashrc"
+echo -e "source /opt/ros/$ROS_DISTRO/setup.bash >> ~/.bashrc"
 echo -e "-----------------------------------------------------------"
 echo -e "-----------------------------------------------------------"
 echo -e "-----------------------------------------------------------"
-echo -e "Success installing ${BOLDRED}ROS2${ENDCOLOR} $CHOOSE_ROS_DISTRO"
+echo -e "Success installing ${BOLDRED}ROS2${ENDCOLOR} $ROS_DISTRO"
 echo -e "-----------------------------------------------------------"
 echo -e "-----------------------------------------------------------"
 echo -e "-----------------------------------------------------------"

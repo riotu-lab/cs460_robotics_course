@@ -10,8 +10,8 @@
 # Authors: Mohammed Abdelkader, mohamedashraf123@gmail.com
 
 
-DOCKER_REPO="osrf/ros:humble-desktop"
-CONTAINER_NAME="ros2_humble"
+DOCKER_REPO="osrf/ros:foxy-desktop"
+CONTAINER_NAME="ros2_foxy"
 WORKSPACE_DIR=~/${CONTAINER_NAME}_shared_volume
 CMD=""
 DOCKER_OPTS=""
