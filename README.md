@@ -19,3 +19,4 @@ To use ROS 2 humble inside docker
   ./custom_humble_install.sh
   ```
 * If the installation is successful, you should be able to execute the `ros2` commands
+* To open another terminal in inside the docker container, just execute the `ros2_humble.sh` script again.
